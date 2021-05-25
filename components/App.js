@@ -11,7 +11,7 @@ export default () => (
   <>
     <IconRegistry icons={EvaIconsPack}/>
     <ApplicationProvider {...eva} theme={{ ...eva.light, ...theme }}>
-    <TopNavigation title='Simple Checklist' alignment='center'/>
+    {/* <TopNavigation title='Simple Checklist' alignment='center'/> */}
       <AppNavigator/>
     </ApplicationProvider>
   </>
