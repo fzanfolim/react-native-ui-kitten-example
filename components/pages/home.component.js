@@ -1,17 +1,17 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
-import { Header } from '../UI';
+import { Header, CardButton } from '../UI';
 import {   
-    Divider,
-    Text,
-    Button, 
+
     Layout } from '@ui-kitten/components';
 
 
-export const HomeScreen = ({ navigation }) => {
 
+
+export const HomeScreen = (props) => {
+  console.log('PROPS HOME:', props)
     const navigateDetails = () => {
-        navigation.navigate('Details');
+        props.navigation.navigate('Details');
       };
 
   return (
@@ -22,29 +22,26 @@ export const HomeScreen = ({ navigation }) => {
       <Text category='h1'>HOME</Text>
       <Button onPress={navigateDetails}>Detalhe</Button>
       </Layout> */}
-     
-     {/* <News /> */}
-     <Layout style={styles.container}>
+    <Layout style={styles.container}>
 
-      <Layout style={styles.layout} level='1'>
-      <Text
-            style={styles.title}
-            category='h3'>
-                Checklist
-        </Text>  
-      </Layout>
+    <Layout style={styles.layout} level='1'>
+      <CardButton icon="toilet_icon" name="Banheiro"/>
+      <CardButton icon="compliant_icon" name="Loja"/>
+      <CardButton icon="compliant_icon" name="Estacionamento"/>
+      <CardButton icon="compliant_icon" name="Deck"/>
+    </Layout>
 
-      <Layout style={styles.layout} level='1'>
-        <Text>3</Text>
-      </Layout>
+    {/* <Layout style={styles.layout} level='3'>
+      <Text>3</Text>
+    </Layout>
 
-      <Layout style={styles.layout} level='1'>
-        <Text>2</Text>
-      </Layout>
+    <Layout style={styles.layout} level='2'>
+      <Text>2</Text>
+    </Layout>
 
-      <Layout style={styles.layout} level='1'>
-        <Text>1</Text>
-      </Layout>
+    <Layout style={styles.layout} level='1'>
+      <Text>1</Text>
+    </Layout> */}
 
 </Layout>
 
@@ -64,12 +61,9 @@ const styles = StyleSheet.create({
   },
   layout: {
     flex: 1,
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
-    padding:5,
-    paddingLeft:15
+    flexDirection: 'row',
+    flexWrap:'wrap',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
-  title: {
-    
-  }
 });
