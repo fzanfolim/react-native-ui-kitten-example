@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Text, Layout } from '@ui-kitten/components';
 import { default as theme } from '../theme.json';
-import { Svg } from '../../components/UI';
+import Svg from './Svg';
 export default (props) => {
 
    
@@ -24,10 +24,10 @@ export default (props) => {
       width:130,
       flexGrow:1,
       alignItems: 'center',
-      backgroundColor: theme['color-primary-600'],
+      backgroundColor: theme['color-primary'],
       margin:10,
       borderRadius:20,
-      padding:20
+      padding:15
       
 
     }

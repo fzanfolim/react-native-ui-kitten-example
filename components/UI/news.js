@@ -2,8 +2,8 @@ import React from 'react';
 import { StyleSheet, View, Image } from 'react-native';
 import { Button,Icon,Layout, Text, ViewPager, Card } from '@ui-kitten/components';
 import { default as theme } from '../theme.json';
-import { color } from 'react-native-reanimated';
-import { Svg } from '../../components/UI';
+
+
 export default (props) => {
 
     const [selectedIndex, setSelectedIndex] = React.useState(0);
@@ -14,81 +14,43 @@ export default (props) => {
 
     return (
        
-      <ViewPager 
-        selectedIndex={selectedIndex}
-        onSelect={index => setSelectedIndex(index)}>
-        
-        <Layout style={styles.slide} level='1'>
-          
-          <View style={styles.tab}>
-         
-            <View style={styles.card}>
-            
-            <Text
-                style={styles.textCard}
-                category='h5'>
-                    Inicie seu checklist, é Fácil
-            </Text>  
-                
-            </View>
-            <View style={styles.conteudo}>
-                
-                <Svg 
-                name='compliant_icon'
-                style={{ width: 150, height: 110}}
-            /> 
-            </View>
-
-          </View>
-       
-          
-
-        </Layout>
-        <Layout
-          style={styles.slide}
-          level='1'>
-          <Text category='h5'>ORDERS</Text>
-        </Layout>
-        <Layout
-          style={styles.slide}
-          level='1'>
-          <Text category='h5'>TRANSACTIONS</Text>
-        </Layout>
-        
-      </ViewPager>
+      <ViewPager
+      selectedIndex={selectedIndex}
+      onSelect={index => setSelectedIndex(index)}>
+      <Layout
+        style={styles.tab}
+        level='2'>
+        <Text style={styles.text}category='h5'>Novidades!</Text>
+        <Text >Nova versão do aplicativo ja possui preenchimento offline, busca de localização e sincronismo automatico quando estiver conectado no wifi!</Text>
+      </Layout>
+      <Layout
+        style={styles.tab}
+        level='2'>
+        <Text style={styles.text}category='h5'>Novidade</Text>
+      </Layout>
+      <Layout
+        style={styles.tab}
+        level='2'>
+        <Text category='h5'>Zanfo</Text>
+      </Layout>
+    </ViewPager>
     );
   };
+
+
   
-  const styles = StyleSheet.create({
-    slide: {
-      display:'flex',
-      height: 200,
-      flexDirection: 'row',
+const styles = StyleSheet.create({
+  tab: {
+    height: 192,
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+    backgroundColor: theme['color-primary-100'],
+    padding:20
+  },
+    text:{
+      margin:10,
+      color: theme['color-text-default'],
+      fontWeight:'bold'
       
-     
-    },
-    tab:{
-        flex:1,
-        backgroundColor: theme['color-primary-200'],
-        alignSelf: 'stretch',
-        flexDirection: 'row',
-        padding:20,
-        margin: 20,
-        borderRadius: 50,
-    },
-    card:{
-        
-        flex: 1,
-        alignSelf: 'stretch',
-        justifyContent: 'center',
-        alignItems: 'center',
-        
-
-    }, 
-    conteudo: {
-        
-        color:'#FFF',
-        
-
-      }
-  });
+    }
+});
